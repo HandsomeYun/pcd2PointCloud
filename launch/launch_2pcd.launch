@@ -1,10 +1,11 @@
+<?xml version='1.0'?>
 <launch>
-  <arg name="pcd_file1" default="/home/zhaoliang/zzl/zhz03_github/smart_intersection_late_fusion/late_fusion_ws/pcl_pcd/velodyne_mid/1684165266185599.pcd" />
+  <arg name="pcd_file1" default="/home/zhaoliang/zzl/zhz03_github/smart_intersection_late_fusion/late_fusion_ws/pcl_pcd/velodyne_mid/1684165266987172_ver.pcd" />
   <arg name="scale1" default="0.1" />
   <arg name="frame_id1" default="/velodyne1" />
-  <arg name="cloud_pcd1" default="velodyne_1" />
+  <arg name="cloud_pcd1" default="/velodyne_1" />
 
-  <arg name="pcd_file2" default="/home/zhaoliang/zzl/zhz03_github/smart_intersection_late_fusion/late_fusion_ws/pcl_pcd/ouster/1678762416100069.pcd" />
+  <arg name="pcd_file2" default="/home/zhaoliang/zzl/zhz03_github/smart_intersection_late_fusion/late_fusion_ws/pcl_pcd/ouster/1674016399400443_ver.pcd" />
   <arg name="scale2" default="0.1" />
   <arg name="frame_id2" default="/os_sensor1" />
   <arg name="cloud_pcd2" default="/ouster_points_1" />
