@@ -1,6 +1,6 @@
 <?xml version='1.0'?>
 <launch>
-  <arg name="pcd_file1" default="/home/zhaoliang/zzl/zhz03_github/smart_intersection_late_fusion/loc_ws/merged.pcd" />
+  <arg name="pcd_file1" default="/home/zhaoliang/zzl/zhz03_github/hdl_localization_ws/src/hdl_localization/data/ucla_merged.pcd" />
   <arg name="scale1" default="0.1" />
   <arg name="frame_id1" default="/map" />
   <arg name="cloud_pcd1" default="/hd_map" />
