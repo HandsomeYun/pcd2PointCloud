@@ -143,7 +143,4 @@ Then, in our Global Options, under the "Fixed Frame" field, enter the name of ou
 
 We can now hit the reset button in our RViz window.  The visualization should look similar to the following: 
 
-![](pcd_vis_result.png)
-
-
-
+![](pcd_viz_result.png)
