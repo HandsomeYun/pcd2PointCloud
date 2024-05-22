@@ -81,28 +81,26 @@ Note that the previously mentioned ROS launch command should be run from the top
 
 If launch is successful, you will get output displaying information on your pcd data, which we will use later. 
 
-Open another terminal window, and open RViz by typing the following into the command line: 
+Open another terminal window, and open RViz using: 
 ```bash 
 rviz 
 ``` 
 
-The RViz window should appear. Add a new display by clicking the "Add" button in the bottom left corner and selecting the "PointCloud2" option from the window prompt that appears. 
+- Add a new display by clicking the "Add" button in the bottom left corner and selecting the "PointCloud2" option from the window prompt. 
 
-A "PointCloud2" display should now appear in the list of displays in the left column of the RViz window. Click the arrow to the left of "PointCloud2" to view more information on the display. 
+- Click the arrow to the left of the new "PointCloud2" display to view more information on the display. 
 
-Find the name of the topic associated with the pcd file by returning to the terminal where the launch file was run. Find the entry next to "topic_name", within the output of the launch file. 
+- Change the "Topic" field within RViz's PointCloud2 menu to the topic name of the pcd file. This topic name should be an option in the selector's dropdown list--enter manually if needed. 
 
-Next, find the frame ID associated with the pcd data by finding the entry next to "frame_id", also within the launch file output. 
+- Change the "Fixed Frame" field within RViz's global options to match that of the frame ID. 
 
-Change the "Topic" field within RViz's PointCloud2 menu to the topic name of the pcd file. This topic name should be an option in the selector's dropdown list, but if not, make sure to enter it manually. 
+- Note that if the frame ID begins with a slash (/), you will likely need to begin with two slashes, since one will be automatically removed. 
 
-Change the "Fixed Frame" field within RViz's global options to match that of the frame ID. 
+- Click the "Reset" button in the bottom left corner of the RViz window to play the pcd data from its start.
 
-Note that if the frame ID begins with a slash (/), you will likely need to begin with two slashes, since one will be automatically removed. 
+- You will see the pcd file PointCloud2 data running in RViz. 
 
-Lastly, click the "Reset" button in the bottom left corner of the RViz window to play the pcd data from its start, since significant time will likely have elapsed since you ran the launch file. 
-
-You will see the pcd file PointCloud2 data running in RViz; the pcd file can be run as many times as needed while using the same RViz setup. 
+- The pcd file can be run as many times as needed while using the same RViz setup. 
 
 ### Example Usage
 
@@ -135,12 +133,13 @@ Now, you can open a second terminal and run the following to open RViz:
 rviz
 ```
 
-We can add a display by clicking the "Add" button in the bottom left corner of the RViz window, then selecting "PointCloud2" from our display options. 
+- Add a display by clicking the "Add" button in the bottom left corner of the RViz window, then selecting "PointCloud2". 
 
-Once "PointCloud2" appears in our list of displays, enter our PointCloud2 topic "/hd_map" in the "Topic" field that appears within the PointCloud2 display. 
+- Enter our PointCloud2 topic "/hd_map" in the "Topic" field that appears within the PointCloud2 display. 
 
-Then, in our Global Options, under the "Fixed Frame" field, enter the name of our frame ID, "/map". (Note that in this example, you may need to type "//map", which will correct to "/map".)
+- Under the Global Options "Fixed Frame" field, enter the name of our frame ID, "/map". 
+- Note that in this example, you may need to type "//map", which will correct to "/map". 
 
-We can now hit the reset button in our RViz window.  The visualization should look similar to the following: 
+- We can now hit the reset button in our RViz window.  The visualization should look similar to the following: 
 
 ![](pcd_viz_result.png)
