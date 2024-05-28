@@ -102,7 +102,7 @@ rviz
 
 - The pcd file can be run as many times as needed while using the same RViz setup. 
 
-### Example Usage
+### Example Usage 
 
 Suppose you wanted to visualize a pcd file with the following directory via PointCloud2: 
 ```bash
@@ -142,4 +142,57 @@ rviz
 
 - We can now hit the reset button in our RViz window.  The visualization should look similar to the following: 
 
-![](pcd_viz_result.png)
+![](pcd_viz_result.png) 
+
+### launch_2pcd.launch 
+
+The launch configuration "launch_2pcd.launch" can be used to visualize two pcd files simultaneously using two different frame IDs. 
+
+- Before using "launch_2pc.launch", open the file "launch_2pc.launch" using a text editor.  
+- Enter the complete path name of the two pcd files you want to visualize as the default values for the arguments (<arg>) with name "pcd_file1" and "pcd_file2". 
+
+Your edited launch file should look similar to the following example, whose input pcd files are "1678758798032182.pcd" and "1678758798332120.pcd", with the following file path names: 
+```bash 
+/media/roszzl/data/1678758798032182.pcd
+/media/roszzl/data/1678758798332120.pcd
+```
+
+![](pcd_launch.png)
+
+Be sure to save the launch file, then open a terminal window and navigate to the pcd workspace. 
+
+Run the following series of commands to build and setup the updated ROS package. 
+```bash 
+catkin_make 
+source devel/setup.bash
+```
+
+Now, run the launch file with the following command: 
+```bash
+roslaunch pcd_pub_ros launch_2pcd.launch
+```
+
+Open another terminal window to launch RViz. 
+```bash 
+rviz
+``` 
+
+- Add a new display by clicking the "Add" button in the bottom left corner and selecting the "PointCloud2" option from the window prompt. 
+
+- Change the PointCloud's "Topic" field to "/velodyne_1"--this is the default name of the topic associated with the first pcd file published by the launch configuration. 
+
+- Now, add a second new PointCloud2 display. Change the associated "Topic" to "/ouster_points_1", the default name of the topic associated with the second pcd file. 
+
+- Note: Each of these options should be available in the dropdown menu for the "Topic" field. 
+
+- Note that if you change the default topic in the launch file, you will have different topics for visualization. 
+
+- Now, you can visualize each pcd file, by changing the "Fixed Frame" field within RViz's global options. 
+
+- To view the first pcd file, change the fixed frame to "/velodyne1", the default name of the frame ID for the pcd file 1; change the fixed frame to "/os_sensor1" to view the second pcd file. 
+
+- As before, use the "Reset" button in the bottom left corner of the RViz window to play pcd data from its start.
+
+- The resultant visualization should look similar to the following: 
+
+![](pcd_viz_result_2.png) 
